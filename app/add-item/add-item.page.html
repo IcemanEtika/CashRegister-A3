@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add New Product</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="save()">Save</ion-button>
+      <ion-button [routerLink]="['..']">Cancel</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="label">
+      <ion-label>New Product</ion-label>
+    </div>
+    <ion-item lines="full">
+      <ion-label class="label">Product Name</ion-label>
+      <ion-input type="text" placeholder="Enter Product Name" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label>Price</ion-label>
+      <ion-input type="number" placeholder="Enter Product Price" [(ngModel)]="price"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label>Quantity</ion-label>
+      <ion-input type="number" placeholder="Enter Product Quantity" [(ngModel)]="quantity"></ion-input>
+    </ion-item>
+  </div>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>History Items</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngFor="let item of itemList" [routerLink]="['./', item.id]">
+      <ion-item button>
+        <ion-label>
+          {{item.itemName}}
+          <ion-label class="quantityLabel">{{item.itemQuantity}}</ion-label>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+</ion-content>

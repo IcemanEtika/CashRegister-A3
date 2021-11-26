@@ -1,0 +1,86 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Cash Register
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div id="container">
+    <ion-row>
+      <ion-col class="itemName">{{name}}</ion-col>
+      <ion-col>
+        <ion-button class="manager-btn" expand="block" shape="round" size="12" routerLink="./manager">Manager</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="light" expand="block" shape="round" (click)="buttonClicked(1)">1</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="light" expand="block" shape="round" (click)="buttonClicked(2)">2</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="light" expand="block" shape="round" (click)="buttonClicked(3)">3</ion-button>
+      </ion-col>
+      <ion-col>{{total}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="light" expand="block" shape="round" (click)="buttonClicked(4)">4</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="light" expand="block" shape="round" (click)="buttonClicked(5)">5</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="light" expand="block" shape="round" (click)="buttonClicked(6)">6</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button class="buy-btn" (click)="buyPressed()">Buy</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="light" expand="block" shape="round" (click)="buttonClicked(7)">7</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="light" expand="block" shape="round" (click)="buttonClicked(8)">8</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="light" expand="block" shape="round" (click)="buttonClicked(9)">9</ion-button>
+      </ion-col>
+      <ion-col (click)="buyPressed()"></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <ion-button color="light" expand="block" shape="round" (click)="buttonClicked(0)">0</ion-button>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col class="quantity">{{quantity}}</ion-col>
+    </ion-row>
+
+    <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350" class="viewport">
+      <ion-list>
+        <ion-item *cdkVirtualFor="let item of itemList; let idx = index" (click)="itemSelected(item)" [class.selected]="idx === currentSelect">
+          <ion-label>
+            {{item.itemName}}
+            <ion-label class="quantityLabel">{{item.itemQuantity}}</ion-label>
+            <ion-label class="priceLabel">{{item.price}}</ion-label>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </cdk-virtual-scroll-viewport>
+
+  </div>
+</ion-content>

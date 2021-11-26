@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Restock {{name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-input type="number" placeholder="Enter new quantity" [(ngModel)]="quantity"></ion-input>
+      <div class="button-layout">
+        <ion-button (click)="restock()">Restock</ion-button>
+        <ion-button [routerLink]="['..']">Cancel</ion-button>
+      </div>
+
+      <cdk-virtual-scroll-viewport itemSize="30" minBufferPx="300" maxBufferPx="900" class="viewport">
+        <ion-list>
+          <ion-item *cdkVirtualFor="let item of itemList; let idx = index" (click)="itemSelected(item)" [class.selected]="idx === currentSelect">
+            <ion-label>
+              {{item.itemName}}
+              <ion-label class="quantityLabel">{{item.itemQuantity}}</ion-label>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </cdk-virtual-scroll-viewport>
+  </div>
+</ion-content>

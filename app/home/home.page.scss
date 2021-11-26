@@ -1,0 +1,39 @@
+#container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.selected {
+  --background: rgb(160, 159, 159);
+}
+
+.quantity {
+  padding-bottom: 20px;
+}
+
+.priceLabel {
+  color: red;
+  padding-top: 10px;
+}
+
+.quantityLabel {
+  float: right;
+}
+
+.viewport {
+  height: 300px;
+  width: 100%;
+}
+
+.manager-btn {
+  color: blue;
+  --background: red;
+  font-weight: bold;
+}
+
+.buy-btn {
+  height: 6.5em;
+  position: absolute;
+}

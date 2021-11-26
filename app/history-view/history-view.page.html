@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{currentItem.itemName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="itemDetails">
+    <ion-label>{{currentItem.itemName}}<br></ion-label>
+    <ion-label>{{currentItem.itemQuantity}}<br></ion-label>
+    <ion-label>{{currentItem.datePurchased}}<br></ion-label>
+    <ion-label>Total amount: {{currentItem.totalCost}}</ion-label>
+  </div>
+</ion-content>
